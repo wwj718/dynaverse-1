@@ -19,7 +19,7 @@ class BlocksGUIPawn {
                 display: none;">
                 <button id="close-editor-button" type="button" class="btn btn-danger btn-x topleft">x</button>
                 <p style="font-size: 12px; margin: 0;">Snap<em>!</em></p>
-                <canvas id="snap" tabindex="1" width="450" height="600"></canvas>
+                <canvas id="snap" tabindex="1" width="800" height="600"></canvas>
             </div>`;
         const wrapper = div.firstChild;
         for (const event of ["keydown", "keyup",
@@ -42,11 +42,11 @@ class BlocksGUIPawn {
             lang: "zh_CN",
             design: "flat",
             border: 1,
-            hideControls: true,
-            hideCategories: true,
-            noSprites: true,
+            // hideControls: true,
+            // hideCategories: true,
+            // noSprites: true,
             // noImports: true,
-            noOwnBlocks: true,
+            // noOwnBlocks: true,
             noRingify: true,
             noUserSettings: true
         });
