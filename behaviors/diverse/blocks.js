@@ -105,7 +105,7 @@ class BlocksEditorActor {
             // maybe: sent together, causing overwriting
             ide.broadcast("updateCardData", null, payload);
         }
-        this.future(1000).tick();
+        this.future(20 + 20 * this.random()).tick();
     }
 
 }
