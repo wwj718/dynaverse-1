@@ -90,7 +90,24 @@ class SpriteManagerPawn {
 class BlocksEditorActor {
     setup() {
         this.initialScale = this.scale;
+        this.tick();
     }
+
+    tick() {
+        let spriteName = `${this.name}-${this.id}`;
+        // Make sure world already exists
+        if (window.world){
+            let ide = window.world.children[0];
+            // List from Snap! list.js
+            let payload = new List([spriteName, new List(this.translation), new List(this.rotation), new List(this.scale)]);
+            console.log(spriteName);
+            console.log(payload);
+            // maybe: sent together, causing overwriting
+            ide.broadcast("updateCardData", null, payload);
+        }
+        this.future(1000).tick();
+    }
+
 }
 
 class BlocksEditorPawn {
